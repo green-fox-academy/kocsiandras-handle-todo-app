@@ -31,7 +31,7 @@ public class Todo {
         try {
           Path filePath = Paths.get("tasks.txt");
           List<String> lines = Files.readAllLines(filePath);
-          if(lines.size()==0){
+          if (lines.size() == 0) {
             System.out.println("No todos for today! :)");
           }
           for (int i = 0; i < lines.size(); i++) {
@@ -41,6 +41,17 @@ public class Todo {
           System.out.println("not working");
         }
       }
+    } else if (args.length == 2) {
+      if (args[0].equals("-a") && args[1].equals("Feed the monkey")) {
+        content.add("Feed the monkey");
+        try {
+          Path filepath = Paths.get("tasks.txt");
+          Files.write(filepath, content);
+        } catch (Exception e) {
+          System.out.println("not working");
+        }
+      }
     }
   }
+
 }
