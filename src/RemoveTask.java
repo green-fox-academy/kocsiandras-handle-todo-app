@@ -8,9 +8,13 @@ public class RemoveTask {
     try {
       Path filepath = Paths.get("tasks.txt");
       List<String> list = Files.readAllLines(filepath);
-      list.remove(list.get(removingPosition - 1));
-      Files.write(filepath, list);
-      System.out.println("removed");
+      if (list.size() >= removingPosition) {
+        list.remove(list.get(removingPosition - 1));
+        Files.write(filepath, list);
+        System.out.println("removed");
+      } else {
+        System.out.println("Unable to remove: index is out of bound");
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -37,8 +37,10 @@ public class Todo {
       try {
         removeTask.removeTask(Integer.parseInt((args[1])));
       } catch (Exception e) {
-        e.printStackTrace();
+        System.out.println("Unable to remove: index is not a number");
       }
+    } else if (args.length == 1 && args[0].equals("-r")) {
+      System.out.println("Unable to remove: no index provided");
     }
   }
 }
