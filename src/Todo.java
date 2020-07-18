@@ -10,6 +10,7 @@ public class Todo {
     ListTasks listTasks = new ListTasks();
     PrintFlags printFlags = new PrintFlags();
     RemoveTask removeTask = new RemoveTask();
+    CheckTask checkTask = new CheckTask();
 
     List<String> content = new ArrayList<>();
     content.add("Walk the dog");
@@ -41,6 +42,8 @@ public class Todo {
       }
     } else if (args.length == 1 && args[0].equals("-r")) {
       System.out.println("Unable to remove: no index provided");
+    } else if (args.length == 2 && args[0].equals("-c")) {
+      checkTask.checkTask(Integer.parseInt((args[1])));
     }
   }
 }

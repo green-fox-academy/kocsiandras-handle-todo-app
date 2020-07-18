@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class ListTasks {
+
   public void listTasks() {
     try {
       Path filePath = Paths.get("tasks.txt");
@@ -12,10 +13,12 @@ public class ListTasks {
         System.out.println("No todos for today! :)");
       }
       for (int i = 0; i < lines.size(); i++) {
-        System.out.println(i + 1 + " - " + lines.get(i));
+        System.out.println(i + 1  + lines.get(i));
       }
+      Files.write(filePath,lines);
     } catch (Exception e) {
       System.out.println("not working");
     }
   }
+
 }
