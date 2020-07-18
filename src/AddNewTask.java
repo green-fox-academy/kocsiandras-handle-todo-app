@@ -9,7 +9,7 @@ public class AddNewTask {
     try {
       Path filepath = Paths.get("tasks.txt");
       List<String> lines = Files.readAllLines(filepath);
-      lines.add(" - [ ]" + input);
+      lines.add(" - [ ] " + input);
       Files.write(filepath, lines);
     } catch (Exception e) {
       e.printStackTrace();

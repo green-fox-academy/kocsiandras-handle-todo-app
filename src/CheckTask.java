@@ -9,12 +9,11 @@ public class CheckTask {
     try {
       Path filepath = Paths.get("tasks.txt");
       List<String> list = Files.readAllLines(filepath);
-      String done = list.get(checkedIndex-1);
-      list.set(checkedIndex-1, " - [X]" + done.substring(0,2));
+      String done = list.get(checkedIndex - 1);
+      list.set(checkedIndex - 1, " - [X] " + done.substring(6));
       Files.write(filepath, list);
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
-
 }
