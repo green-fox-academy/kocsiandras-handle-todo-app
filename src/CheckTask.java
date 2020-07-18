@@ -10,8 +10,12 @@ public class CheckTask {
       Path filepath = Paths.get("tasks.txt");
       List<String> list = Files.readAllLines(filepath);
       String done = list.get(checkedIndex - 1);
-      list.set(checkedIndex - 1, " - [X] " + done.substring(6));
-      Files.write(filepath, list);
+      if (list.size() >= checkedIndex) {
+        list.set(checkedIndex - 1, " - [X] " + done.substring(6));
+        Files.write(filepath, list);
+      } else {
+        System.out.println("Unable to check: index is out of bound");
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
