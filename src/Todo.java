@@ -33,10 +33,10 @@ public class Todo {
       addNewTask.addNewTask(args[1]);
     } else if (args.length == 1 && args[0].equals("-a")) {
       System.out.println("Unable to add: no task provided");
-    } else if (args.length == 2 && args[0].equals("-r")){
-      try{
+    } else if (args.length == 2 && args[0].equals("-r")) {
+      try {
         removeTask.removeTask(Integer.parseInt((args[1])));
-      }catch (Exception e){
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
